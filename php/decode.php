@@ -13,4 +13,5 @@ $ciphertext = substr($ciphertext, 16);
 //$original = openssl_decrypt($ciphertext, 'AES-128-CBC', $key2, OPENSSL_RAW_DATA, $iv2);
 $original = openssl_decrypt($ciphertext, 'AES-256-CBC', $key, OPENSSL_RAW_DATA, $iv2);
 
+//echo $data_to_decrypt;
 echo $original;
