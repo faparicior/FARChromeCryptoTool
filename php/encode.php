@@ -12,4 +12,6 @@ $iv = openssl_random_pseudo_bytes(16);
 $ciphertext = openssl_encrypt($data_to_encrypt, 'AES-256-CBC', $key, OPENSSL_RAW_DATA, $iv);
 $output = base64_encode($iv.$ciphertext);
 
-echo urlencode($output);
+// For GET action
+//echo urlencode($output);
+echo $output;
