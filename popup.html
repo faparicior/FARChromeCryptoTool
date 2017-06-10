@@ -1,15 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Crypto tool ajax version</title>
-    <script src="popup.js"></script>
+    <link href="public/bootstrap/css/bootstrap.min.css" rel=stylesheet>
+    <link href="public/bootstrap/css/bootstrap.theme.min.css" rel=stylesheet>
+    
+    <!--<script src="popup.js"></script>-->
+    <script src="public/jquery/jquery-3.2.1.min.js"></script>
+    <script src="public/bootstrap/js/bootstrap.min.js"></script>
 </head>
-<body>
-<h1>Crypto tool</h1>
-    <input type="text" placeholder="key">
-    <input type="text" placeholder="text">
-    <input type="text" placeholder="encoded-text">
-    <button id="encryptText">Encode</button>
-    <button id="decryptText">Decode</button>
+<body style="width: 300px !important;">
+    <h3>Crypto tool</h3>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="key">
+                <input type="text" class="form-control" placeholder="text">
+                <input type="text" class="form-control" placeholder="encoded-text">
+                <button class="btn btn-danger" id="encryptText">Encode</button>
+                <button class="btn btn-success" id="decryptText">Decode</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
