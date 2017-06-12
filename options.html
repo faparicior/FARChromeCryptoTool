@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crypto tool ajax version</title>
+    <link href="public/bootstrap/css/bootstrap.min.css" rel=stylesheet>
+    <!--<link href="public/bootstrap/css/bootstrap-theme.min.css" rel=stylesheet>-->
+    <link href="public/options/options.css" rel=stylesheet>
+    <link href="public/custom.css" rel=stylesheet>
+
+    <!--<script src="popup.js"></script>-->
+    <script src="public/jquery/jquery-3.2.1.min.js"></script>
+    <script src="public/bootstrap/js/bootstrap.min.js"></script>
+    <script src="public/options/options.js"></script>
+</head>
+<body style="width: 350px !important;">
+    <h3>Crypto tool</h3>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="api-type" class="col-md-4 control-label text-left">API type</label>
+                <div class="col-sm-7 col-md-7">
+                    <div class="input-group">
+                        <div id="radioBtn" class="btn-group">
+                            <a class="btn btn-primary btn-sm active" data-toggle="api-type" data-title="SERVER">SERVER</a>
+                            <a class="btn btn-primary btn-sm notActive" data-toggle="api-type" data-title="LOCAL">LOCAL</a>
+                        </div>
+                        <input type="hidden" name="api-type" id="api-type">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="api-url" class="col-sm-4 col-md-4 control-label text-left">API Url</label>
+                <div class="col-sm-7 col-md-7">
+                    <div class="input-group">
+                        <input type="text" placeholder="API url" name="api-url" id="api-url">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="api-url-token" class="col-sm-4 col-md-4 control-label text-left">API token</label>
+                <div class="col-sm-7 col-md-7">
+                    <div class="input-group">
+                        <input type="text" placeholder="API token" name="api-token" id="api-token">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
