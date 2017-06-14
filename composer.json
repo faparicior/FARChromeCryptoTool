@@ -1,0 +1,15 @@
+{
+    "name": "faparicio/crypt-api",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Fernando Aparicio",
+            "email": "faparicior@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Faparicior\\CryptApi\\": "Lib/"
+        }
+    }
+}
