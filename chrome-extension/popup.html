@@ -5,9 +5,9 @@
     <link href="public/bootstrap/css/bootstrap.min.css" rel=stylesheet>
     <link href="public/custom.css" rel=stylesheet>
 
-    <!--<script src="popup.js"></script>-->
     <script src="public/jquery/jquery-3.2.1.min.js"></script>
     <script src="public/bootstrap/js/bootstrap.min.js"></script>
+    <script src="popup.js"></script>
 </head>
 <body style="width: 300px !important;">
     <div class="row">
@@ -27,7 +27,7 @@
                 <!--<label for="api-url" class="col-sm-4 col-md-4 control-label text-left">Key</label>-->
                 <div class="col-sm-7 col-md-7">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="key">
+                        <input type="text" id="key" class="form-control" placeholder="key">
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                 <!--<label for="api-url" class="col-sm-4 col-md-4 control-label text-left">Text</label>-->
                 <div class="col-sm-7 col-md-7">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="text">
+                        <input type="text" id="text-to-encode" class="form-control" placeholder="text">
                     </div>
                 </div>
             </div>
@@ -51,7 +51,7 @@
                 <!--<label for="api-url" class="col-sm-4 col-md-4 control-label text-left">Encoded</label>-->
                 <div class="col-sm-7 col-md-7">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="encoded-text">
+                        <input type="text" id="text-to-decode" class="form-control" placeholder="encoded-text">
                     </div>
                 </div>
             </div>
@@ -63,9 +63,9 @@
             <div class="form-group">
                 <div class="col-md-12">
                     <div class="input-group col-md-12 text-center">
-                        <button class="btn btn-danger" id="encryptText">Encode</button>
+                        <button class="btn btn-danger" id="encrypt-text">Encode</button>
                         &nbsp;&nbsp;
-                        <button class="btn btn-success" id="decryptText">Decode</button>
+                        <button class="btn btn-success" id="decrypt-text">Decode</button>
                     </div>
                 </div>
             </div>

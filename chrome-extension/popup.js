@@ -1,20 +1,84 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var checkPageButton = document.getElementById('checkPage');
-    checkPageButton.addEventListener('click', function() {
+$(function() {
+    var apiType = localStorage.getItem("apiType");
+    var apiUrl = localStorage.getItem("apiUrl");
+    var apiToken = localStorage.getItem("apiToken");
+    var apiKey = localStorage.getItem("apiKey");
 
-        chrome.tabs.getSelected(null, function(tab) {
-            d = document;
+    if(apiType === 'SERVER') {
+        $('#key').prop('disabled', true);
+    }
 
-            var f = d.createElement('form');
-            f.action = 'http://gtmetrix.com/analyze.html?bm';
-            f.method = 'post';
-            var i = d.createElement('input');
-            i.type = 'hidden';
-            i.name = 'url';
-            i.value = tab.url;
-            f.appendChild(i);
-            d.body.appendChild(f);
-            f.submit();
+    $('#encrypt-text').click(function () {
+        encryptAndVerifyDecrypt();
+    });
+
+    $('#decrypt-text').click(function () {
+        decrypt();
+    });
+
+    function encryptAndVerifyDecrypt()
+    {
+        // apiUrl = 'http://localhost:3000/main.php';
+        // apiToken = 'test_token';
+    
+        var textToEncode = $('#text-to-encode').val();
+
+        $.ajax({
+            type: "POST",
+            url: apiUrl,
+            data: {
+                action: 'encode',
+                textToEncode: textToEncode,
+                token: apiToken
+            },
+            success: function(data, textStatus, jqXHR)
+            {
+                if(data === 'Incorrect token!!!') {
+                    $('#text-to-decode').val(data);
+                    return;
+                }
+
+                // TODO: Verify decrypt
+                $('#text-to-decode').val(data);
+
+                decrypt(function(data) {
+                    if(textToEncode !== data) {
+                        $('#text-to-decode').val('Error encoding!!!');
+                    }
+                });
+            },
+            error: function (jqXHR, textStatus, errorThrown)
+            {
+                alert('Server error encoding!!!');
+            }
         });
-    }, false);
-}, false);
+    }
+
+    function decrypt(callback)
+    {
+        // apiUrl = 'http://localhost:3000/main.php';
+        // apiToken = 'test_token';
+
+        $.ajax({
+            type: "POST",
+            url: apiUrl,
+            data: {
+                action: 'decode',
+                textToDecode: $('#text-to-decode').val(),
+                token: apiToken
+            },
+            success: function(data, textStatus, jqXHR)
+            {
+                if(callback) {
+                    callback(data);
+                    return;
+                }
+                $('#text-to-encode').val(data);
+            },
+            error: function (jqXHR, textStatus, errorThrown)
+            {
+                alert('Server error decoding!!!');
+            }
+        }); 
+    }
+});

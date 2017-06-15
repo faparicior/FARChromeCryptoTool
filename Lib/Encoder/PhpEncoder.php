@@ -25,6 +25,8 @@ class PhpEncoder implements Encoder
         //$ciphertext = openssl_encrypt($data_to_encrypt, 'AES-128-CBC', $key, OPENSSL_RAW_DATA, $iv);
         $ciphertext = openssl_encrypt($data, 'AES-256-CBC', $this->key, OPENSSL_RAW_DATA, $iv);
 
+        // Use urlEncode with Get calls
+        // return urlencode(base64_encode($iv.$ciphertext));
         return base64_encode($iv.$ciphertext);
     }
 }
