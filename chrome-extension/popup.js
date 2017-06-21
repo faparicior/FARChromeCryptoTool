@@ -9,12 +9,43 @@ $(function() {
     }
 
     $('#encrypt-text').click(function () {
-        encryptAndVerifyDecrypt();
+        if(apiType === "LOCAL") {
+            localEncryptAndVerifyDecrypt();
+        } else {
+            encryptAndVerifyDecrypt();
+        }
     });
 
     $('#decrypt-text').click(function () {
-        decrypt();
+        if(apiType === "LOCAL") {
+            localEncrypt();
+        } else {
+            decrypt();
+        }
     });
+
+    function localEncryptAndVerifyDecrypt()
+    {
+        var keyText = $('#key').val();
+        var textToEncode = $('#text-to-encode').val();
+
+        var key = CryptoJS.lib.WordArray.create(keyText);
+        // var key = CryptoJS.lib.WordArray.random(16);
+        // var key = CryptoJS.enc.Hex.parse(keyText);
+        console.log(key.toString());
+        var iv  = CryptoJS.lib.WordArray.random(16);
+
+        var encrypted = iv + CryptoJS.AES.encrypt(textToEncode, key, { iv: iv });
+
+        $('#text-to-decode').val(encrypted);
+
+        var ivToExtract = encrypted;
+        var iv2 = CryptoJS.enc.Hex.parse(ivToExtract.substring(0, 32));
+        var textEncrypted = ivToExtract.substring(32);
+
+        var decrypted = CryptoJS.AES.decrypt(textEncrypted, key, { iv: iv2 });
+        console.log(decrypted.toString(CryptoJS.enc.Utf8));
+    }
 
     function encryptAndVerifyDecrypt()
     {

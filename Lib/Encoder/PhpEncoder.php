@@ -27,6 +27,6 @@ class PhpEncoder implements Encoder
 
         // Use urlEncode with Get calls
         // return urlencode(base64_encode($iv.$ciphertext));
-        return base64_encode($iv.$ciphertext);
+        return base64_encode(CryptoJS.enc.Utf8$ciphertext);
     }
 }
