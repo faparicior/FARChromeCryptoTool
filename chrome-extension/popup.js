@@ -4,8 +4,10 @@ $(function() {
     var apiToken = localStorage.getItem("apiToken");
     var apiKey = localStorage.getItem("apiKey");
 
-    if(apiType === 'SERVER') {
-        $('#key').prop('disabled', true);
+    $('#key').prop('disabled', true);
+
+    if(apiType === 'LOCAL') {
+        $('#key').val(apiKey);
     }
 
     $('#encrypt-text').click(function () {
