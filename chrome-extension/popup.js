@@ -48,17 +48,13 @@ $(function() {
     {
         var keyText = $('#key').val();
         var textToDecode = $('#text-to-decode').val();
-
         var key = CryptoJS.lib.WordArray.create(keyText);
-
         var iv = CryptoJS.enc.Hex.parse(textToDecode.substring(0, 32));
-        var textEncrypted = textToDecode.substring(32);
 
+        var textEncrypted = textToDecode.substring(32);
         var decrypted = CryptoJS.AES.decrypt(textEncrypted, key, { iv: iv });
 
-        // if (decrypted.toString(CryptoJS.enc.Utf8) === textToEncode) {
-            $('#text-to-encode').val(decrypted.toString(CryptoJS.enc.Utf8));
-        // }
+        $('#text-to-encode').val(decrypted.toString(CryptoJS.enc.Utf8));
     }
 
     function encryptAndVerifyDecrypt()
