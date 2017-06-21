@@ -18,7 +18,7 @@ $(function() {
 
     $('#decrypt-text').click(function () {
         if(apiType === "LOCAL") {
-            localEncrypt();
+            localDecrypt();
         } else {
             decrypt();
         }
@@ -30,21 +30,35 @@ $(function() {
         var textToEncode = $('#text-to-encode').val();
 
         var key = CryptoJS.lib.WordArray.create(keyText);
-        // var key = CryptoJS.lib.WordArray.random(16);
-        // var key = CryptoJS.enc.Hex.parse(keyText);
-        console.log(key.toString());
         var iv  = CryptoJS.lib.WordArray.random(16);
-
         var encrypted = iv + CryptoJS.AES.encrypt(textToEncode, key, { iv: iv });
-
-        $('#text-to-decode').val(encrypted);
 
         var ivToExtract = encrypted;
         var iv2 = CryptoJS.enc.Hex.parse(ivToExtract.substring(0, 32));
         var textEncrypted = ivToExtract.substring(32);
 
         var decrypted = CryptoJS.AES.decrypt(textEncrypted, key, { iv: iv2 });
-        console.log(decrypted.toString(CryptoJS.enc.Utf8));
+
+        if (decrypted.toString(CryptoJS.enc.Utf8) === textToEncode) {
+            $('#text-to-decode').val(encrypted);
+        }
+    }
+
+    function localDecrypt()
+    {
+        var keyText = $('#key').val();
+        var textToDecode = $('#text-to-decode').val();
+
+        var key = CryptoJS.lib.WordArray.create(keyText);
+
+        var iv = CryptoJS.enc.Hex.parse(textToDecode.substring(0, 32));
+        var textEncrypted = textToDecode.substring(32);
+
+        var decrypted = CryptoJS.AES.decrypt(textEncrypted, key, { iv: iv });
+
+        // if (decrypted.toString(CryptoJS.enc.Utf8) === textToEncode) {
+            $('#text-to-encode').val(decrypted.toString(CryptoJS.enc.Utf8));
+        // }
     }
 
     function encryptAndVerifyDecrypt()
