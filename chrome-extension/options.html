@@ -2,24 +2,39 @@
 <html>
 <head>
     <title>Crypto tool ajax version</title>
-    <link href="public/bootstrap/css/bootstrap.min.css" rel=stylesheet>
+    <link rel="stylesheet" href="public/bootstrap/css/bootstrap.min.css" rel=stylesheet>
     <!--<link href="public/bootstrap/css/bootstrap-theme.min.css" rel=stylesheet>-->
-    <link href="public/options/options.css" rel=stylesheet>
-    <link href="public/custom.css" rel=stylesheet>
+    <link rel="stylesheet" href="public/options/options.css" rel=stylesheet>
+    <link rel="stylesheet" href="public/custom.css" rel=stylesheet>
+    <link rel="stylesheet" href="public/font-awesome/css/font-awesome.min.css">
 
     <!--<script src="popup.js"></script>-->
     <script src="public/jquery/jquery-3.2.1.min.js"></script>
     <script src="public/bootstrap/js/bootstrap.min.js"></script>
     <script src="options.js"></script>
 </head>
-<body style="width: 350px !important;">
-    <h3>Crypto tool</h3>
+<body style="width: 450px !important;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group col-md-12">
+                <div class="col-sm-7 col-md-7">
+                    <div class="input-group">
+                        <h1><small>
+                            <!--<span><i class="fa fa-undo" aria-hidden="true"></i></span>-->
+                            Crypto tool
+                            </small>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
-                <label for="api-type" class="col-md-4 control-label text-left">API type</label>
-                <div class="col-sm-7 col-md-7">
+                <div class="col-sm-10 col-md-10">
+                    <label for="api-type" class="col-md-4 control-label text-left">API type</label>
                     <div class="input-group">
                         <div id="radioBtn" class="btn-group">
                             <a class="btn btn-primary btn-sm active" data-toggle="api-type" data-title="SERVER">SERVER</a>
@@ -34,10 +49,11 @@
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
-                <label for="api-url" class="col-sm-4 col-md-4 control-label text-left">API Url</label>
-                <div class="col-sm-7 col-md-7">
+                <div class="col-sm-10 col-md-10">
+                    <label for="api-url" class="col-sm-4 col-md-4 control-label text-left">API Url</label>
                     <div class="input-group">
-                        <input type="text" placeholder="API url" name="api-url" id="api-url">
+                        <span class="input-group-addon"><i class="fa fa-globe fa-lg" aria-hidden="true"></i></span>
+                        <input type="text" placeholder="API url" name="api-url" id="api-url" class="form-control">
                     </div>
                 </div>
             </div>
@@ -47,16 +63,34 @@
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
-                <label for="api-token" class="col-sm-4 col-md-4 control-label text-left">API token</label>
-                <div class="col-sm-7 col-md-7">
+                <div class="col-sm-10 col-md-10">
+                    <label for="api-token" class="col-sm-4 col-md-4 control-label text-left">API token</label>
                     <div class="input-group">
-                        <input type="text" placeholder="API token" name="api-token" id="api-token">
+                        <span class="input-group-addon"><i class="fa fa-certificate fa-lg" aria-hidden="true"></i></span>
+                        <input type="text" placeholder="API token" name="api-token" id="api-token" class="form-control">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <div class="col-sm-10 col-md-10">
+                    <label for="api-key" class="col-sm-4 col-md-4 control-label text-left">Key</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input type="text" name="api-key" id="api-key" class="form-control" placeholder="key">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--<div class="row">
         <div class="col-md-12">
             <div class="form-group">
                 <label for="api-key" class="col-sm-4 col-md-4 control-label text-left">Key</label>
@@ -67,7 +101,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 
 </body>
 </html>
