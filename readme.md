@@ -7,42 +7,44 @@ It seems secure until someone break security. And then your passwords are expose
 
 This project is a chrome extension that encrypt your passwords using local resources or using a php code acting as a API.
 
-Chome extemsion + Server side installation
+Additionally, you can select the encrypted text and decrypt directly to the clipboard using the right button.
+
+Chome extension + Server side installation
 ------------------------------------------
 
-1) Clone the project
+Step 1: Clone the project
 --------------------
 
 ```bash
 git clone https://github.com/faparicior/FARChromeCryptoTool.git
 ```
 
-2) Install the components
+Step 2: Install the components
 -------------------------
 
 ```bash
 composer install
 ```
 
-3) Edit the server.conf file and personalize your KEY and TOKEN 
+Step 3: Edit the server.conf file and personalize your KEY and TOKEN 
 ---------------------------------------------------------------
 
 KEY = 'test_purposes';
 TOKEN = 'test_token';
 
-4) Launch a php server instance
+Step 4: Launch a php server instance
 -------------------------------
 
 ```bash
 php app/console server:run 127.0.0.1:8080
 ```
 
-5) Install the Chrome extension
+Step 5: Install the Chrome extension
 -------------------------------
 
 (Place the URL extension here...)
 
-6) Configure the extension to use the server mode
+Step 6: Configure the extension to use the server mode
 -------------------------------------------------
 
 - Go to the config screen
@@ -52,12 +54,12 @@ php app/console server:run 127.0.0.1:8080
 Chome extension + Server side installation
 ------------------------------------------
 
-1) Install the Chrome extension
+Step 1: Install the Chrome extension
 -------------------------------
 
 (Place the URL extension here...)
 
-2) Configure the extension to use the local mode
+Step 2: Configure the extension to use the local mode
 -------------------------------------------------
 
 Go to the config screen and place the Key that needs to encrypt.
@@ -65,3 +67,8 @@ Go to the config screen and place the Key that needs to encrypt.
 
 And that's it!!!!
 =================
+
+Recommendations
+===============
+
+Personally, I recommend store passwords unencrypted in a local storage like keepass or a plate text field. This software comes with no warranty and his purpose is to add a securyty layer i ypu hs to expose your sensible information like passwords in a cloud and more vulnerable site.
