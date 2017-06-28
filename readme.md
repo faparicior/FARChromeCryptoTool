@@ -71,4 +71,4 @@ And that's it!!!!
 Recommendations
 ===============
 
-Personally, I recommend store passwords unencrypted in a local storage like keepass or a plate text field. This software comes with no warranty and his purpose is to add a securyty layer i ypu hs to expose your sensible information like passwords in a cloud and more vulnerable site.
+Personally, I recommend store passwords unencrypted in a local storage like keepass or a plane text field. This software comes with no warranty and his purpose is to add a securyty layer if you have to expose your sensible information like passwords in a cloud and more vulnerable site.
