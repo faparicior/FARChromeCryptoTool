@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
 
-  "name": "Encoder-Decoder plugin",
-  "description": "This extension will encode and decode text using a rest service or local javascript.",
-  "version": "1.0",
+  "name": "Encrypt / Decrypt plugin",
+  "description": "This extension will encrypt and decrypt text using a rest service or local javascript.",
+  "version": "1.0.1",
   "author": "Fernando Aparicio",
   
   "options_page": "options.html",
